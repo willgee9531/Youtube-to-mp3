@@ -5,13 +5,13 @@ from moviepy.editor import *
 def download_and_convert_to_mp3(youtube_url):
     try:
         # Create a YouTube object
-        yt = YouTube(youtube_url)
+        yt_obj = YouTube(youtube_url)
         
         # Get the highest resolution video stream
-        video = yt.streams.get_highest_resolution()
+        video = yt_obj.streams.get_highest_resolution()
         
         # Download the video
-        print(f"Downloading: {yt.title}")
+        print(f"Downloading: {yt_obj.title}")
         video_file = video.download()
         
         # Convert video to mp3
